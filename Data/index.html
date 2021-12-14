@@ -10,6 +10,15 @@
     <div class="res"></div>
     <script>
       const res = document.querySelector(".res");
+      fetch(
+        "https://my-json-server.typicode.com/daniszcode/RodinhaS-Backend/db"
+      )
+        .then((response) => response.json())
+        .then((item) =>
+          item.response.map((item) => {
+            res.innerHTML = item.id + `<img src=${item.url}>`;
+          })
+        );
     </script>
   </body>
 </html>
